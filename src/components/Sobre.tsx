@@ -11,9 +11,11 @@ export default function Sobre() {
       >
         <div className="relative mx-auto w-full max-w-xs">
           <div className="overflow-hidden rounded-[2rem] rounded-bl-[5rem] border border-line">
-            <div className="flex aspect-[4/5] items-center justify-center bg-gradient-to-tr from-honey/20 via-paper to-sage/20">
-              <span className="font-display text-5xl text-sage-deep/70">AS</span>
-            </div>
+            <img
+              src="/amanda.jpg"
+              alt="Amanda Stys"
+              className="aspect-[4/5] w-full object-cover object-top"
+            />
           </div>
         </div>
 

@@ -4,10 +4,10 @@ import Areas from './components/Areas'
 import Sobre from './components/Sobre'
 import ComoFunciona from './components/ComoFunciona'
 import Citacao from './components/Citacao'
+import Depoimentos from './components/Depoimentos'
 import Faq from './components/Faq'
 import Cta from './components/Cta'
 import Footer from './components/Footer'
-import WppFloat from './components/WppFloat'
 
 export default function App() {
   return (
@@ -19,11 +19,11 @@ export default function App() {
         <Sobre />
         <ComoFunciona />
         <Citacao />
+        <Depoimentos />
         <Faq />
         <Cta />
       </main>
       <Footer />
-      <WppFloat />
     </>
   )
 }
