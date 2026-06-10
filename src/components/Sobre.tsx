@@ -42,7 +42,7 @@ export default function Sobre() {
             </p>
           </div>
           <p className="mt-6 inline-block rounded-full border border-line px-4 py-2 text-sm text-ink">
-            {config.role} · {config.crp}
+            {config.role}
           </p>
         </div>
       </div>

@@ -7,7 +7,7 @@ export const config = {
   phoneDisplay: '(11) 93257-0067',
   instagram: 'amandanstys',
   city: 'São Paulo',
-  format: 'Online e presencial',
+  format: 'Online',
 } as const
 
 export const wa = (msg: string) =>

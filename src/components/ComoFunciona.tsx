@@ -14,8 +14,8 @@ const steps = [
   },
   {
     icon: <Monitor className="h-6 w-6" />,
-    title: 'Online ou presencial',
-    desc: 'Você escolhe o formato que cabe na sua rotina. O cuidado é o mesmo nos dois.',
+    title: 'Online',
+    desc: 'As sessões acontecem de forma online, no conforto do seu espaço, com toda a atenção e cuidado.',
   },
   {
     icon: <Lock className="h-6 w-6" />,

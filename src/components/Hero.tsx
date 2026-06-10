@@ -45,30 +45,26 @@ export default function Hero() {
               <Lock className="h-4 w-4 text-sage-deep" /> Sigilo absoluto
             </span>
             <span className="flex items-center gap-2">
-              <Monitor className="h-4 w-4 text-sage-deep" /> Sessões online ou presenciais
+              <Monitor className="h-4 w-4 text-sage-deep" /> Sessões online
             </span>
           </div>
         </div>
 
-        {/* portrait placeholder */}
         <div className="relative mx-auto w-full max-w-sm">
-          <div className="relative overflow-hidden rounded-[2rem] rounded-tr-[5rem] border border-line bg-surface shadow-[0_30px_60px_-30px_rgba(37,52,43,0.35)]">
-            <div className="flex aspect-[4/5] items-center justify-center bg-gradient-to-br from-sage/25 via-surface to-honey/20">
-              <div className="text-center">
-                <div className="mx-auto mb-3 grid h-20 w-20 place-items-center rounded-full bg-ink/5 font-display text-3xl text-sage-deep">
-                  AS
-                </div>
-                <p className="px-8 text-xs leading-relaxed text-stone">
-                  Espaço para a foto da Amanda
-                  <br />
-                  <span className="opacity-70">(substitua em /public)</span>
-                </p>
-              </div>
-            </div>
+          <div
+            className="relative overflow-hidden rounded-[2rem] rounded-tr-[5rem] border border-line shadow-[0_30px_60px_-30px_rgba(37,52,43,0.35)]"
+            style={{ aspectRatio: '4/5' }}
+          >
+            <img
+              src="/amanda.jpg"
+              alt={config.name}
+              className="absolute top-0 max-w-none"
+              style={{ width: '170%', left: '-35%' }}
+            />
           </div>
           <div className="absolute -bottom-5 left-6 rounded-2xl border border-line bg-surface px-5 py-3 shadow-lg">
             <p className="font-display text-lg text-ink">{config.name}</p>
-            <p className="text-xs text-stone">{config.role} · {config.crp}</p>
+            <p className="text-xs text-stone">{config.role}</p>
           </div>
         </div>
       </div>
