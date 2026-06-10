@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-5xl flex-col gap-8 px-5 py-12 sm:px-8 md:flex-row md:items-start md:justify-between">
         <div className="max-w-xs">
           <p className="font-display text-xl text-ink">{config.name}</p>
-          <p className="mt-1 text-sm text-stone">{config.role} · {config.crp}</p>
+          <p className="mt-1 text-sm text-stone">{config.role}</p>
           <p className="mt-3 text-sm leading-relaxed text-ink-soft">
             {config.format} · {config.city}. Um espaço de cuidado, no seu tempo.
           </p>
