@@ -10,11 +10,15 @@ export default function Sobre() {
         className={`reveal ${r.visible ? 'in' : ''} mx-auto grid max-w-5xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]`}
       >
         <div className="relative mx-auto w-full max-w-xs">
-          <div className="overflow-hidden rounded-[2rem] rounded-bl-[5rem] border border-line">
+          <div
+            className="relative overflow-hidden rounded-[2rem] rounded-bl-[5rem] border border-line"
+            style={{ aspectRatio: '4/5' }}
+          >
             <img
               src="/amanda.jpg"
               alt="Amanda Stys"
-              className="aspect-[4/5] w-full object-cover object-top"
+              className="absolute top-0 max-w-none"
+              style={{ width: '170%', left: '-35%' }}
             />
           </div>
         </div>

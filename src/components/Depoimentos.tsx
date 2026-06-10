@@ -21,6 +21,8 @@ const items = [
   },
 ]
 
+const DELAY = 5000
+
 export default function Depoimentos() {
   const [current, setCurrent] = useState(0)
   const [paused, setPaused] = useState(false)
@@ -28,12 +30,13 @@ export default function Depoimentos() {
 
   useEffect(() => {
     if (paused) return
-    const id = setInterval(() => setCurrent(c => (c + 1) % items.length), 5000)
-    return () => clearInterval(id)
-  }, [paused])
+    const id = setTimeout(() => setCurrent(c => (c + 1) % items.length), DELAY)
+    return () => clearTimeout(id)
+  }, [current, paused])
 
-  const prev = () => setCurrent(c => (c - 1 + items.length) % items.length)
-  const next = () => setCurrent(c => (c + 1) % items.length)
+  const go = (i: number) => setCurrent(i)
+  const prev = () => go((current - 1 + items.length) % items.length)
+  const next = () => go((current + 1) % items.length)
 
   return (
     <section className="py-20 sm:py-28">
@@ -50,14 +53,15 @@ export default function Depoimentos() {
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          <div className="overflow-hidden rounded-2xl border border-line bg-surface p-8 sm:p-12">
+          <div className="relative overflow-hidden rounded-2xl border border-line bg-surface">
+            {/* Slides */}
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${current * 100}%)` }}
             >
               {items.map((item, i) => (
-                <div key={i} className="min-w-full">
-                  <Quote className="mb-6 h-8 w-8 text-sage/60" />
+                <div key={i} className="min-w-full p-8 sm:p-12">
+                  <Quote className="mb-6 h-8 w-8 text-sage/50" />
                   <p className="font-display text-xl leading-relaxed text-ink sm:text-2xl">
                     "{item.text}"
                   </p>
@@ -67,6 +71,17 @@ export default function Depoimentos() {
                 </div>
               ))}
             </div>
+
+            {/* Progress bar */}
+            <div className="absolute bottom-0 left-0 h-0.5 w-full bg-line">
+              <div
+                key={`${current}-${paused}`}
+                className="h-full bg-sage"
+                style={{
+                  animation: paused ? 'none' : `slide-progress ${DELAY}ms linear forwards`,
+                }}
+              />
+            </div>
           </div>
 
           <div className="mt-6 flex items-center justify-between">
@@ -74,7 +89,7 @@ export default function Depoimentos() {
               {items.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => setCurrent(i)}
+                  onClick={() => go(i)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     i === current ? 'w-6 bg-sage-deep' : 'w-2 bg-line hover:bg-stone'
                   }`}
